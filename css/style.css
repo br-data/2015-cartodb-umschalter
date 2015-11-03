@@ -1,8 +1,12 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
 html, body, #map {
     height: 100%;
     padding: 0;
     margin: 0;
-    font-family: "Helvetica", Arial;
+    font-family: "Open Sans", "Helvetica", Arial, sans-serif;
+    color: #262626;
+    background: #fff;
 }
 
 #selector {
@@ -18,18 +22,32 @@ html, body, #map {
 }
 
 #selector h3 {
-    padding: 15px 30px;
+    padding: 10px 20px;
     margin: 0;
     border-bottom: 1px solid #999;
-    background-color: #F0F0F0;
+    background-color: #2b2b2c;
+    color: #fff;
+    font-weight: normal;
 }
 
 #selector li {
     border-bottom: 1px solid #999;
-    padding: 15px 30px;
+    padding: 5px 20px 7px;
     font-size: 13px;
-    color: #444;
     cursor: auto;
+}
+
+#selector li:before {
+    font-size: 2em;
+    content: '☐';
+    margin-right: .2em;
+    vertical-align: sub;
+    color: #999;
+}
+
+#selector li.selected:before {
+    content: '☑';
+    color: #007bc2;
 }
 
 #selector li:hover {

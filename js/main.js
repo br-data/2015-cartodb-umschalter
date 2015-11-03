@@ -2,9 +2,9 @@ function init() {
 
     cartodb.createVis('map', 'https://br-data.cartodb.com/api/v2/viz/477bdfc0-8210-11e5-936b-0e787de82d45/viz.json', {
         tiles_loader: true,
-        center_lat: 50,
-        center_lon: 10,
-        zoom: 5
+        center_lat: 49,
+        center_lon: 13,
+        zoom: 7
     })
     .done(function(vis, layers) {
 
@@ -44,7 +44,7 @@ function createSelector(layer) {
 
             if (mode === 'toggle') {
 
-                $options.removeClass('selected');
+                $sections.find('li').removeClass('selected');
                 $li.addClass('selected');
 
                 query = "SELECT * FROM " + table + " WHERE " + column + " IN ('" + type + "')";
@@ -54,6 +54,7 @@ function createSelector(layer) {
 
                 var selectedTypes = [];
 
+                $section.siblings().find('li').removeClass('selected');
                 $li.toggleClass('selected');
 
                 // Find all selected types
