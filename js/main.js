@@ -37,6 +37,8 @@ function createSelector(layer) {
 
         $options.click(function(e) {
 
+            var query;
+
             var $li = $(e.target);
             var type = $li.attr('data-type');
 
@@ -45,15 +47,31 @@ function createSelector(layer) {
                 $options.removeClass('selected');
                 $li.addClass('selected');
 
-                var query = "SELECT * FROM " + table + " WHERE " + column + " IN ('" + type + "')";
-
-                layer.setSQL(query);
+                query = "SELECT * FROM " + table + " WHERE " + column + " IN ('" + type + "')";
             }
 
             if (mode === 'select') {
 
+                var selectedTypes = [];
+
                 $li.toggleClass('selected');
+
+                // Find all selected types
+                $section.find('.selected').each(function (index, li) {
+
+                    selectedTypes.push($(li).attr('data-type'));
+                });
+
+                // Format array as string, e.g. ('A','B','C')
+                selectedTypes = selectedTypes.join("','");
+
+                query = "SELECT * FROM " + table + " WHERE " + column + " IN ('" + selectedTypes + "')";
             }
+
+            console.log(query);
+
+            // Apply query
+            layer.setSQL(query);
         });
     });
 }

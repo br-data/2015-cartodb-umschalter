@@ -2,6 +2,7 @@ html, body, #map {
     height: 100%;
     padding: 0;
     margin: 0;
+    font-family: "Helvetica", Arial;
 }
 
 #selector {
@@ -16,10 +17,16 @@ html, body, #map {
     list-style-type: none;
 }
 
+#selector h3 {
+    padding: 15px 30px;
+    margin: 0;
+    border-bottom: 1px solid #999;
+    background-color: #F0F0F0;
+}
+
 #selector li {
     border-bottom: 1px solid #999;
     padding: 15px 30px;
-    font-family: "Helvetica", Arial;
     font-size: 13px;
     color: #444;
     cursor: auto;
