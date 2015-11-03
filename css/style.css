@@ -9,11 +9,9 @@ html, body, #map {
     background: #fff;
 }
 
+
 #selector {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 0;
+    font-size: .8em;
 }
 
 #selector ul {
@@ -22,39 +20,42 @@ html, body, #map {
 }
 
 #selector h3 {
-    padding: 10px 20px;
-    margin: 0;
-    border-bottom: 1px solid #999;
-    background-color: #2b2b2c;
-    color: #fff;
     font-weight: normal;
 }
 
 #selector li {
-    border-bottom: 1px solid #999;
-    padding: 5px 20px 7px;
-    font-size: 13px;
+    margin: 1em 0;
+    padding: .5em 1em;
     cursor: auto;
+    display: inline-block;
+    border-radius: .5em;
+    background-color: #eee;
 }
 
-#selector li:before {
-    font-size: 2em;
-    content: '☐';
+#selector li:not(:last-child) {
     margin-right: .2em;
-    vertical-align: sub;
-    color: #999;
-}
-
-#selector li.selected:before {
-    content: '☑';
-    color: #007bc2;
-}
-
-#selector li:hover {
-    background-color: #F0F0F0;
-    cursor: pointer;
 }
 
 #selector li.selected {
-    background-color: #EEE;
+    background-color: #d1eaf4;
+}
+
+#selector li:before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    margin-right: .5em;
+    background-color: #69b6d5;
+    vertical-align: middle;
+}
+
+#selector li:not(.selected):before {
+    background-color: #ccc;
+}
+
+#selector li:hover {
+    background-color: #eee;
+    cursor: pointer;
 }
