@@ -19,13 +19,17 @@
 
     <div id="map"></div>
 
-    <div id="layer_selector" class="cartodb-infobox">
-      <ul>
-        <li data="all" class="selected">All countries</li>
-        <li data="1000">area >1000 km<sup>2</sup></li>
-        <li data="6000">area >6000 km<sup>2</sup></li>
-        <li data="10000">area >10000 km<sup>2</sup></li>
-        <li data="50000">area >50000 km<sup>2</sup></li>
+    <div id="selector" class="cartodb-infobox" data-table="liste_aller_einrichtungen">
+      <ul  data-column="typ_filter" data-mode="select">
+        <li data-type="GU">Gesamtunterkunft</li>
+        <li data-type="NUK">Notunterkunft</li>
+        <li data-type="EAE">Erstaufnahmeeinrichtung</li>
+        <li data-type="ARE">Aufnahme- und Rückführungserinrichtung</li>
+        <li data-type="geplant">geplant</li>
+      </ul>
+      <ul data-column="regierungsbezirk" data-mode="toggle">
+        <li data-type="Schwaben">Schwaben</li>
+        <li data-type="Oberbayern">Oberbayern</li>
       </ul>
     </div>
     

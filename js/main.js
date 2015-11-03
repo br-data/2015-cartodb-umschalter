@@ -1,42 +1,61 @@
-function createSelector(layer) {
+function init() {
 
-    var sql = new cartodb.SQL({ user: 'documentation' });
-    var $options = $('#layer_selector li');
-
-    $options.click(function(e) {
-
-        // get the area of the selected layer
-        var $li = $(e.target);
-        var area = $li.attr('data');
-        // deselect all and select the clicked one
-        $options.removeClass('selected');
-        $li.addClass('selected');
-        // create query based on data from the layer
-        var query = "select * from european_countries_e";
-        if(area !== 'all') {
-        query = "select * from european_countries_e where area > " + area;
-        }
-        // change the query in the layer to update the map
-        layer.setSQL(query);
-    });
-}
-
-function main() {
-
-    cartodb.createVis('map', 'http://documentation.cartodb.com/api/v2/viz/2b13c956-e7c1-11e2-806b-5404a6a683d5/viz.json', {
+    cartodb.createVis('map', 'https://br-data.cartodb.com/api/v2/viz/477bdfc0-8210-11e5-936b-0e787de82d45/viz.json', {
         tiles_loader: true,
         center_lat: 50,
-        center_lon: 20,
-        zoom: 3
+        center_lon: 10,
+        zoom: 5
     })
     .done(function(vis, layers) {
-        // layer 0 is the base layer, layer 1 is cartodb layer
+
         var subLayer = layers[1].getSubLayer(0);
+
         createSelector(subLayer);
     })
     .error(function(err) {
+
         console.log(err);
+    });
+
+}
+
+function createSelector(layer) {
+
+    var $container = $('#selector');
+    var $sections = $container.find('ul');
+
+    var table = $container.attr('data-table');
+
+    $sections.each(function (index, section) {
+
+        var $section = $(section);
+
+        var column = $section.attr('data-column');
+        var mode = $section.attr('data-mode');
+        
+        var $options = $section.find('li');
+
+        $options.click(function(e) {
+
+            var $li = $(e.target);
+            var type = $li.attr('data-type');
+
+            if (mode === 'toggle') {
+
+                $options.removeClass('selected');
+                $li.addClass('selected');
+
+                var query = "SELECT * FROM " + table + " WHERE " + column + " IN ('" + type + "')";
+
+                layer.setSQL(query);
+            }
+
+            if (mode === 'select') {
+
+                $li.toggleClass('selected');
+            }
+        });
     });
 }
 
-window.onload = main;
+window.onload = init;

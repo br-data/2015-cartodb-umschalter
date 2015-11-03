@@ -4,19 +4,19 @@ html, body, #map {
     margin: 0;
 }
 
-#layer_selector {
+#selector {
     position: absolute;
     top: 20px;
     right: 20px;
     padding: 0;
 }
 
-#layer_selector ul {
+#selector ul {
     padding: 0; margin: 0;
     list-style-type: none;
 }
 
-#layer_selector li {
+#selector li {
     border-bottom: 1px solid #999;
     padding: 15px 30px;
     font-family: "Helvetica", Arial;
@@ -25,11 +25,11 @@ html, body, #map {
     cursor: auto;
 }
 
-#layer_selector li:hover {
+#selector li:hover {
     background-color: #F0F0F0;
     cursor: pointer;
 }
 
-#layer_selector li.selected {
+#selector li.selected {
     background-color: #EEE;
 }
