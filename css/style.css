@@ -1,6 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-html, body, #map {
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
     height: 100%;
     padding: 0;
     margin: 0;
@@ -9,9 +17,36 @@ html, body, #map {
     background: #fff;
 }
 
+main, #map {
+    height: 100%
+}
+
+.ARE {
+   background: #055d00;
+}
+
+.EAE {
+   background: #0f3b82;
+}
+
+.GU {
+   background: #007bc2;
+}
+
+.NUK {
+   background: #ffcc00;
+}
+
+.geplant {
+   background: #a6cee3;
+}
 
 #selector {
-    font-size: .8em;
+    font-size: .8em;;
+    position: absolute;
+    bottom: 25px;
+    left: 20px;
+    right: 0;
 }
 
 #selector ul {
@@ -20,42 +55,39 @@ html, body, #map {
 }
 
 #selector h3 {
+    margin: .5em 0; 
     font-weight: normal;
 }
 
 #selector li {
-    margin: 1em 0;
-    padding: .5em 1em;
-    cursor: auto;
+    margin: 0 0 .7em;
+    padding: .5em 1em .5em .8em;
+    cursor: pointer;
     display: inline-block;
     border-radius: .5em;
     background-color: #eee;
+    -webkit-box-shadow: 0 0 5px -1px rgba(0,0,0,.75);
+    -moz-box-shadow: 0 0 5px -1px rgba(0,0,0,.75);
+    box-shadow: 0 0 5px -1px rgba(0,0,0,.75);
 }
 
 #selector li:not(:last-child) {
-    margin-right: .2em;
+    margin-right: .4em;
 }
 
 #selector li.selected {
     background-color: #d1eaf4;
 }
 
-#selector li:before {
+#selector .bubble {
     content: '';
     display: inline-block;
     width: 1em;
     height: 1em;
     border-radius: 50%;
-    margin-right: .5em;
-    background-color: #69b6d5;
-    vertical-align: middle;
-}
-
-#selector li:not(.selected):before {
-    background-color: #ccc;
+    margin-right: .3em;
 }
 
 #selector li:hover {
-    background-color: #eee;
-    cursor: pointer;
+
 }

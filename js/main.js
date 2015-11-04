@@ -2,13 +2,13 @@ function init() {
 
     cartodb.createVis('map', 'https://br-data.cartodb.com/api/v2/viz/477bdfc0-8210-11e5-936b-0e787de82d45/viz.json', {
         tiles_loader: true,
-        center_lat: 49,
-        center_lon: 13,
+        center_lat: 48.4,
+        center_lon: 11,
         zoom: 7
     })
     .done(function(vis, layers) {
 
-        var subLayer = layers[1].getSubLayer(0);
+        var subLayer = layers[1].getSubLayer(1);
 
         createSelector(subLayer);
     })
