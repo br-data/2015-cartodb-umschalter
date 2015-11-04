@@ -2,8 +2,8 @@ function init() {
 
     cartodb.createVis('map', 'https://br-data.cartodb.com/api/v2/viz/477bdfc0-8210-11e5-936b-0e787de82d45/viz.json', {
         tiles_loader: true,
-        center_lat: 48.4,
-        center_lon: 11,
+        center_lat: 48.6,
+        center_lon: 11.4,
         zoom: 7
     })
     .done(function(vis, layers) {
