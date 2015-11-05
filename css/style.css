@@ -46,7 +46,7 @@ main, #map {
     position: absolute;
     bottom: 30px;
     left: 20px;
-    right: 0;
+    right: 20px;
 }
 
 #selector ul {
@@ -76,6 +76,10 @@ main, #map {
     margin-right: .4em;
 }
 
+#selector li:not(.selected) .bubble {
+    background-color: #ccc;
+}
+
 #selector li.selected {
     background-color: #d1eaf4;
 }
@@ -90,7 +94,22 @@ main, #map {
 }
 
 @media all and (max-width: 500px) {
-    nav {
-        display: none;
+    #selector ul {
+        background-color: #fff;
+        padding: .7em 1em .2em;
+        border-radius: .5em;
+    }
+
+    #selector li.selected {
+        background-color: transparent;
+    }
+
+    #selector li {
+        background-color: transparent;
+        padding: 0;
+        border-radius: 0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+         box-shadow: none;
     }
 }
