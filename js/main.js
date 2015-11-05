@@ -35,11 +35,14 @@ function createSelector(layer) {
         
         var $options = $section.find('li');
 
-        $options.click(function(e) {
+        $options.click(changeFilter);
+
+        function changeFilter(e) {
 
             var query;
 
-            var $li = $(e.target);
+            // If there is no target create an empty wrapper
+            var $li = $(e ? e.target : $());
             var type = $li.attr('data-type');
 
             if (mode === 'toggle') {
@@ -73,7 +76,10 @@ function createSelector(layer) {
 
             // Apply query
             layer.setSQL(query);
-        });
+        }
+
+        // Initially set query
+        changeFilter();
     });
 }
 
