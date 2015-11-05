@@ -89,6 +89,8 @@ main, #map {
     margin-right: .3em;
 }
 
-#selector li:hover {
-
+@media all and (max-width: 500px) {
+    nav {
+        display: none;
+    }
 }
