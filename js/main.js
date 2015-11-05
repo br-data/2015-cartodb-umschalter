@@ -21,10 +21,12 @@ function init() {
 
 function createSelector(layer) {
 
+    // Parent selector container (table)
     var $container = $('#selector');
-    var $sections = $container.find('ul');
-
     var table = $container.attr('data-table');
+
+    // Sections of the parent container
+    var $sections = $container.find('ul');
 
     $sections.each(function (index, section) {
 
@@ -33,6 +35,7 @@ function createSelector(layer) {
         var column = $section.attr('data-column');
         var mode = $section.attr('data-mode');
         
+        // Elements (filters) of a section
         var $options = $section.find('li');
 
         $options.click(changeFilter);
@@ -45,19 +48,28 @@ function createSelector(layer) {
             var $li = $(e ? e.target : $());
             var type = $li.attr('data-type');
 
+            // Filter by one type
             if (mode === 'toggle') {
 
+                // Clear selected state for all column
                 $sections.find('li').removeClass('selected');
+
+                // Add selected class for current element
                 $li.addClass('selected');
 
+                // Set the query
                 query = "SELECT * FROM " + table + " WHERE " + column + " IN ('" + type + "')";
             }
 
+            // Filter by multiple types
             if (mode === 'select') {
 
                 var selectedTypes = [];
 
+                // Clear selected state for other colums selectors
                 $section.siblings().find('li').removeClass('selected');
+
+                // Toggle selected class for current element
                 $li.toggleClass('selected');
 
                 // Find all selected types
@@ -69,10 +81,9 @@ function createSelector(layer) {
                 // Format array as string, e.g. ('A','B','C')
                 selectedTypes = selectedTypes.join("','");
 
+                // Set the query
                 query = "SELECT * FROM " + table + " WHERE " + column + " IN ('" + selectedTypes + "')";
             }
-
-            console.log(query);
 
             // Apply query
             layer.setSQL(query);
