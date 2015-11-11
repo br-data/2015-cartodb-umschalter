@@ -10,9 +10,16 @@ function init() {
 
         var subLayer = layers[1].getSubLayer(1);
 
+        // Set infowindow from template
+        subLayer.infowindow.set('template', $('#template').html())
+            .on('error', function (err) {
+
+                console.log(err);
+            });
+
         createSelector(subLayer);
     })
-    .error(function(err) {
+    .error(function (err) {
 
         console.log(err);
     });

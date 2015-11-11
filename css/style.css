@@ -96,6 +96,32 @@ main, #map {
     margin-right: .3em;
 }
 
+div.cartodb-popup.v2.custom {
+    background: #666;
+}
+
+div.cartodb-popup.v2.custom:before {
+    border-top: 14px solid #666;
+}
+
+div.cartodb-popup.v2.custom h3,
+div.cartodb-popup.v2.custom h4 {
+    color: #bbb;
+}
+
+div.cartodb-popup.v2.custom p {
+    color: #fff;
+}
+
+div.cartodb-popup.v2.custom a.cartodb-popup-close-button:after,
+div.cartodb-popup.v2 a.cartodb-popup-close-button:before {
+    background: #fff;
+}
+
+div.cartodb-popup.v2.custom a.cartodb-popup-close-button {
+    background: #666;
+}
+
 @media all and (max-width: 500px) {
     #selector ul {
         border: 1px solid #7c7c7c;

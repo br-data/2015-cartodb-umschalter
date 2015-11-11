@@ -17,6 +17,33 @@
 
   <body>
 
+    <script type="infowindow/html" id="template">
+      <div class="cartodb-popup v2 custom">
+       <a href="#close" class="cartodb-popup-close-button close">x</a>
+       <div class="cartodb-popup-content-wrapper">
+        <h3>{{name_der_unterkunft}}</h3>
+        <p>{{typ_text}}</p>
+        
+        <h4>Kapazität</h4>
+        <p>{{kap_text}}</p>
+
+        {{#geplanter_eroffnungstermin}}
+          <h4>Geplante Eröffnung</h4>
+          <p>{{geplanter_eroffnungstermin}}</p>
+        {{/geplanter_eroffnungstermin}}
+        
+        {{#betrieb_durch}}
+          <h4>Verantwortlich</h4>
+          <p>{{betrieb_durch}}</p>
+        {{/betrieb_durch}}
+
+        <h4>stand</h4>
+        <p>{{stand}}</p>
+       </div>
+       <div class="cartodb-popup-tip-container"></div>
+      </div>
+    </script>
+
     <main>
 
       <section id="map"></section>
