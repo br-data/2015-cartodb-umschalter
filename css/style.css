@@ -106,10 +106,12 @@ div.cartodb-popup.v2.custom:before {
 
 div.cartodb-popup.v2.custom h3,
 div.cartodb-popup.v2.custom h4 {
+    font-family: "Open Sans", "Helvetica", Arial, sans-serif;
     color: #bbb;
 }
 
 div.cartodb-popup.v2.custom p {
+    font-family: "Open Sans", "Helvetica", Arial, sans-serif;
     color: #fff;
 }
 
