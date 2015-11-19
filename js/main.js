@@ -8,6 +8,11 @@ function init() {
     })
     .done(function(vis, layers) {
 
+        vis.map.set({
+            minZoom: 6,
+            maxZoom: 10
+        });
+
         var subLayer = layers[1].getSubLayer(1);
 
         // Set infowindow from template
