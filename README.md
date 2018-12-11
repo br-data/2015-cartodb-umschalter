@@ -1,8 +1,8 @@
 # CartoDB Umschalter
 Ermöglicht es verschiedene Daten in einer CartoDB-Karte umzuschalten. Der Umschalter verändert den SQL-Filter und rendert die Karte neu.
 
-Direktlink: http://web.br.de/interaktiv/fluechtlingsunterkuenfte/
-Artikel: http://www.br.de/nachrichten/fluechtlinge-unterbringung-in-bayern-100.html
+Direktlink: https://web.br.de/interaktiv/fluechtlingsunterkuenfte/
+Artikel: https://www.br.de/nachrichten/fluechtlinge-unterbringung-in-bayern-100.html
 
 ### Attribute
 - `data-table`: Name des CartoDB-Datensatzes, zum Beispiel *superhelden*
